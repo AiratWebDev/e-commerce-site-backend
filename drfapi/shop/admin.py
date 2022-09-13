@@ -12,6 +12,6 @@ class CatalogAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug_product': ('good', )}
-    list_display = ['id_product', 'good', 'parent_catalog', 'price', 'quantity', 'description']
+    list_display = ['id_product', 'good', 'parent_catalog', 'price', 'quantity', 'description', 'images']
     list_editable = ['good', 'parent_catalog', 'price', 'quantity', 'description']
 
