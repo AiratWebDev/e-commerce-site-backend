@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, FileResponse
 from django.views.generic import DetailView
 
-from .models import Product, ProductCatalog
-from .serializers import ProductSerializer, CatalogSerializer
+from .models import Product, ProductCatalog, Reviews
+from .serializers import ProductSerializer, CatalogSerializer, ReviewsSerializer
 
 
 class ProductsAPIList(generics.ListAPIView):
@@ -17,7 +17,11 @@ class CatalogAPIList(generics.ListAPIView):
     serializer_class = CatalogSerializer
 
 
+class ReviewsAPI(generics.ListCreateAPIView):
+    queryset = Reviews.objects.all()
+    serializer_class = ReviewsSerializer
+
+
 def get_img(request, img_url):
     return FileResponse(open(f'product_pictures/{img_url}', 'rb'))
-    #return render(request, 'shop/image.html', context=data)
 

@@ -26,3 +26,9 @@ class Product(models.Model):
     description = models.CharField(max_length=150, verbose_name='Описание товара', blank=True)
     images = models.FileField(upload_to='product_pictures', verbose_name='Фото товара')
 
+
+class Reviews(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Имя')
+    email = models.EmailField(verbose_name='Почтовый адрес')
+    topic = models.CharField(max_length=70, verbose_name='Тема обращения')
+    review = models.CharField(max_length=500, verbose_name='Отзыв')

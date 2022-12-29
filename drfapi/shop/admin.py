@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, ProductCatalog
+from .models import Product, ProductCatalog, Reviews
 
 
 @admin.register(ProductCatalog)
@@ -14,4 +14,9 @@ class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug_product': ('good', )}
     list_display = ['id_product', 'good', 'parent_catalog', 'price', 'quantity', 'description', 'images']
     list_editable = ['good', 'parent_catalog', 'price', 'quantity', 'description']
+
+
+@admin.register(Reviews)
+class ReviewsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'topic', 'review']
 
