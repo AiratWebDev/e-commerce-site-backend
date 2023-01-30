@@ -15,15 +15,15 @@ class User(AbstractUser):
 
     name = models.CharField(max_length=50, verbose_name='Имя')
     username = models.CharField(max_length=50, verbose_name='Имя пользователя', default='Some_user')
-    surname = models.CharField(max_length=50, verbose_name='Фамилия')
+    surname = models.CharField(max_length=50, verbose_name='Фамилия', blank=True)
     password = models.CharField(verbose_name='Пароль', max_length=255, db_index=True)
     email = models.EmailField(verbose_name='Почтовый адрес', unique=True, db_index=True)
     phone = PhoneNumberField(unique=True, verbose_name='Номер телефона')
     gender = models.CharField(default=MALE, max_length=1, choices=GENDERS, verbose_name='Пол')
     birthdate = models.DateField(blank=True, null=True)
-    city = models.CharField(max_length=50, verbose_name='Город')
-    street = models.CharField(max_length=255, verbose_name='Улица')
-    house = models.CharField(max_length=20, verbose_name='Дом')
+    city = models.CharField(max_length=50, verbose_name='Город', blank=True,)
+    street = models.CharField(max_length=255, verbose_name='Улица', blank=True,)
+    house = models.CharField(max_length=20, verbose_name='Дом', blank=True,)
     apartment = models.IntegerField(verbose_name='Квартира', null=True, blank=True)
 
     USERNAME_FIELD = 'email'

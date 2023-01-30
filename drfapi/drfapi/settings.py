@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'shop',
     'users',
     'reviews',
+    'cart',
     'rest_framework',
     'corsheaders',
     'phonenumber_field',
     'rest_framework_simplejwt.token_blacklist',
+    'django_filters',
 ]
 
 REST_FRAMEWORK = {
@@ -52,7 +54,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),  # срок жизни аксес токена
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # срок жизни аксес токена
     'REFRESH_TOKEN_LIFETIME': timedelta(days=90),  # срок жизни рефреш токена
     'ROTATE_REFRESH_TOKENS': True,
     # настройка True позволяет обновлять рефреш токен пока пользователь авторизован на сайте,

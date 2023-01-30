@@ -10,6 +10,10 @@ class ProductCatalog(models.Model):
     catalog = models.CharField(max_length=20, verbose_name='Категория товаров', db_index=True, blank=True)
     slug_catalog = models.SlugField(unique=True, default='', null=False, db_index=True, verbose_name='ЧПУ каталога')
 
+    class Meta:
+        verbose_name_plural = 'Каталоги'
+        verbose_name = 'Каталог'
+
     def __str__(self):
         return self.catalog
 
@@ -27,6 +31,10 @@ class Product(models.Model):
     reviews = models.CharField(max_length=500, verbose_name='Отзывы', blank=True)
     description = models.CharField(max_length=150, verbose_name='Описание товара', blank=True)
     images = models.FileField(upload_to='product_pictures', verbose_name='Фото товара')
+
+    class Meta:
+        verbose_name_plural = 'Товары'
+        verbose_name = 'Товар'
 
     def __str__(self):
         return self.good

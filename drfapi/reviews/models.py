@@ -7,5 +7,9 @@ class Reviews(models.Model):
     topic = models.CharField(max_length=70, verbose_name='Тема обращения')
     review = models.CharField(max_length=500, verbose_name='Отзыв')
 
+    class Meta:
+        verbose_name_plural = 'Отзывы'
+        verbose_name = 'Отзыв'
+
     def __str__(self):
         return self.topic
