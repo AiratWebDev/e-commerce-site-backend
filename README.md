@@ -13,7 +13,7 @@
 
 • Python 3.11  
 • Django 4.1.1  
-• Django Rest Framework 3.13.1
+• Django Rest Framework 3.13.1  
 • PostgreSQL  
 • SimpleJWT  
 • Django Phonenumber Field и Cors Headers  
